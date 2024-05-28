@@ -1,7 +1,9 @@
-// App.tsx
-import { useState } from "react";
-import Hangman from "./components/Hangman";
-import Welcome from "./components/Welcome";
+import React, { useEffect, useState } from 'react';
+import Hangman from './components/Hangman';
+import Welcome from './components/Welcome';
+import reactLogo from './assets/react.svg';
+import viteLogo from './assets/vite.svg';
+//import './App.css';
 
 const wordCategories = {
   animales: {
@@ -62,7 +64,17 @@ const wordCategories = {
 };
 
 function App() {
+  const [count, setCount] = useState(0);
   const [currentCategory, setCurrentCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    const key = setInterval(() => {
+      setCount(count => count + 1);
+    }, 1000);
+    return () => {
+      clearInterval(key);
+    };
+  }, []);
 
   const selectRandomCategory = () => {
     const categories = Object.keys(wordCategories);
@@ -86,6 +98,9 @@ function App() {
             />
           </div>
         )}
+      </div>
+      <div>
+        <p>{count} segundos han pasado!!</p>
       </div>
     </div>
   );

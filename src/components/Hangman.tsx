@@ -1,5 +1,9 @@
 // Hangman.tsx
 import { useState, useEffect } from 'react';
+import hangmanPart1 from '../img/hangmanPart1.png';
+import hangmanPart2 from '../img/hangmanPart2.png';
+import hangmanPart3 from '../img/hangmanPart3.png';
+import hangmanPart4 from '../img/hangmanPart4.png';
 
 interface HangmanProps {
   words: string[];
@@ -40,12 +44,15 @@ const Hangman = ({ words, hints }: HangmanProps) => {
     setErrorCount(0);
   };
 
+  const hangmanImages = [hangmanPart1, hangmanPart2, hangmanPart3, hangmanPart4];
+
   return (
     <div>
       <p>{displayWord.join(' ')}</p>
       <p>Hint: {hints[selectedWord]}</p>
       <input maxLength={1} onChange={(e) => handleGuess(e.target.value)} />
-      {(displayWord.join('') === selectedWord || errorCount > 5) && (
+      <img src={hangmanImages[errorCount]} alt={`Hangman Part ${errorCount + 1}`} />
+      {(displayWord.join('') === selectedWord || errorCount >= 4) && (
         <button onClick={restartGame}>Select New Word</button>
       )}
       <p>Error count: {errorCount}</p>

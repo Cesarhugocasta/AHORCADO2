@@ -1,9 +1,7 @@
-/* styles.css */
-
 /* Estilos globales */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -26,14 +24,14 @@ body {
 
 h1 {
   font-size: 3em;
-  color: #4CAF50;
+  color: #FFD700;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 p {
   font-size: 1.2em;
-  color: #333;
+  color: #FFFFFF;
   margin-bottom: 30px;
 }
 
@@ -47,7 +45,7 @@ p {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
   transition: transform 0.5s ease-in-out;
 }
 
@@ -59,16 +57,17 @@ p {
 .random-button {
   padding: 15px 30px;
   font-size: 1.2em;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
+  background-color: #FFD700;
+  color: #000000;
+  border: 2px solid #FFD700;
   border-radius: 25px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .random-button:hover {
-  background-color: #45a049;
+  background-color: #000000;
+  color: #FFD700;
 }
 
 /* Estilos para el contenedor del juego */
@@ -79,8 +78,8 @@ p {
 
 .category-animation h2 {
   font-size: 2em;
-  color: #4CAF50;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
 }
 
@@ -93,14 +92,14 @@ p {
 
 .word-display {
   font-size: 2em;
-  color: #333;
+  color: #FFFFFF;
   margin-bottom: 30px;
 }
 
 .input-field {
   padding: 10px 20px;
   font-size: 1.2em;
-  border: 2px solid #4CAF50;
+  border: 2px solid #FFD700;
   border-radius: 5px;
   margin-bottom: 20px;
   transition: border-color 0.3s;
@@ -108,12 +107,12 @@ p {
 
 .input-field:focus {
   outline: none;
-  border-color: #45a049;
+  border-color: #FFFFFF;
 }
 
 .error-count {
   font-size: 1.2em;
-  color: #f44336;
+  color: #FF0000;
   margin-bottom: 20px;
   animation: shake 0.5s ease-in-out;
 }
@@ -128,7 +127,7 @@ p {
 
 .win-message {
   font-size: 1.5em;
-  color: #4CAF50;
+  color: #FFD700;
   margin-top: 20px;
   animation: fadeIn 1s ease-in-out;
 }
@@ -162,4 +161,11 @@ p {
 .games img {
   width: 150px;
   height: 150px;
+}
+
+/* Estilos para el contador gaming */
+.counter {
+  font-size: 3em;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
